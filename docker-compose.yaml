@@ -1,0 +1,69 @@
+version: "3.9"
+
+services:
+  mongo:
+    build:
+      context: ./mongoDB
+    container_name: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j
+    restart: always
+    environment:
+      - NEO4J_AUTH=neo4j/123456
+    ports:
+      - 7474:7474
+      - 7687:7687
+    depends_on:
+      - "mongo"
+
+  elasticsearch:
+    image: elasticsearch:7.14.0
+    container_name: elasticsearch
+    restart: always
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+      - 9300:9300
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+    depends_on:
+      - "mongo"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spring
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - "mongo"
+      - "neo4j"
+      - "elasticsearch"
+    command:
+      [
+        "./wait-for-it.sh",
+        "elasticsearch:9200",
+        "-t",
+        "80",
+        "--",
+        "java",
+        "-jar",
+        "-Dspring.profiles.active=prod",
+        "app.jar",
+      ]

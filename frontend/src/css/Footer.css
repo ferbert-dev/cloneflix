@@ -1,0 +1,87 @@
+/* Footer allgemein */
+.member-footer {
+  padding-top: 10rem;
+  /*
+max-width: 980px;
+margin: 20px auto 0;
+padding: 0 4%;
+color: grey;
+*/
+}
+
+hr {
+  background-color: grey !important;
+}
+
+/* Formatierung für Links Soziale Medien */
+.member-footer .social-links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1em;
+}
+.member-footer .social-links .link {
+  margin-right: 15px;
+}
+
+/* Formatierung für weitere Details zu Netflix  */
+.member-footer .member-footer-links {
+  font-size: 13px;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  align-items: flex-start;
+  margin: 0 0 14px 0;
+  padding: 0;
+}
+.member-footer .link {
+  color: grey;
+  text-decoration: none;
+}
+.member-footer .link:hover {
+  color: White;
+}
+
+.member-footer .member-footer-link-wrapper {
+  list-style-type: none;
+  -webkit-box-flex: 0;
+  flex: 0 0 50%;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+@media (min-width: 800px) .member-footer .member-footer-link-wrapper {
+  flex-basis: 25%;
+}
+ul {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  -webkit-column-count: 4;
+}
+
+/* Formatierung für Service Button */
+.member-footer .service-code {
+  margin-bottom: 20px;
+  font-size: 13px;
+  padding: 0.5em;
+  background: 0 0;
+  color: grey;
+  border: solid 1px grey;
+}
+.service-code:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Formatierung für Copyright */
+.member-footer .member-footer-copyright {
+  font-size: 11px;
+  padding-bottom: 15px;
+}

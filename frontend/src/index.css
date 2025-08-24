@@ -1,0 +1,182 @@
+body {
+  background-color: #181818;
+  min-height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.custom-navbar {
+  background-color: transparent !important;
+}
+
+.cloneflix-intro-background {
+  position: absolute;
+  top: -64px;
+  z-index: 0;
+}
+
+.cloneflix-intro-gradient {
+  background: rgba(0, 0, 0, 0.4);
+  background-image: none;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.cloneflix-intro-text {
+  position: relative;
+  z-index: 1;
+}
+
+.is-very-large {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.custom-card {
+  border-bottom: 8px solid #222;
+}
+
+.card-title {
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+/* TODO: Use sass to alter the bulma variables and thereby avoid this mess. */
+a.navbar-item.is-active {
+  color: green !important;
+}
+a.navbar-item:hover {
+  color: white !important;
+}
+
+.backdrop {
+  top: 0;
+  z-index: 0;
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.backdrop-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 64px);
+  z-index: 1;
+}
+
+.backdrop-overlay {
+  /* background-image: linear-gradient(to right, black, transparent); */
+
+  /* background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 0, 0, 1) 59%,
+    rgba(255, 0, 0, 0) 88%
+  ); */
+
+  height: calc(100vh - 64px);
+  width: 40%;
+  color: white;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  padding: 20% 0 0 5%;
+}
+
+.backdrop-overlay:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -200px;
+  left: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    to right,
+    #181818 10%,
+    rgba(23, 23, 23, 0.98) 20%,
+    rgba(23, 23, 23, 0.98) 25%,
+    rgba(23, 23, 23, 0.98) 35%,
+    rgba(23, 23, 23, 0.98) 40%,
+    rgba(23, 23, 23, 0.98) 45%,
+    rgba(23, 23, 23, 0.9) 50%,
+    rgba(23, 23, 23, 0.87) 55%,
+    rgba(23, 23, 23, 0.82) 60%,
+    rgba(23, 23, 23, 0.75) 65%,
+    rgba(23, 23, 23, 0.63) 70%,
+    rgba(23, 23, 23, 0.45) 75%,
+    rgba(23, 23, 23, 0.27) 80%,
+    rgba(23, 23, 23, 0.15) 85%,
+    rgba(23, 23, 23, 0.08) 90%,
+    rgba(23, 23, 23, 0.03) 95%,
+    rgba(23, 23, 23, 0) 100%
+  );
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.loading-anim {
+  width: 5rem;
+  height: auto;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.title-tile {
+  transition: transform 450ms;
+}
+
+.title-tile:hover {
+  transform: scale(1.05);
+}
+
+.tmdb-notice {
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.tmdb-notice img {
+  max-width: 15em;
+  height: auto;
+}
+
+.tmdb-notice p {
+  color: grey;
+}
