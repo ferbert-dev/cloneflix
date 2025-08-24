@@ -1,6 +1,6 @@
 # Cloneflix (Uni Projeckt)
 <div align="center">
-<img src="https://github.com/Mozgo-kontrol/cloneflix/blob/main/frontend/src/images/cloneflix.PNG" width="1000"/>
+<img src="https://github.com/ferbert-dev/cloneflix/blob/main/frontend/src/images/cloneflix.PNG" width="1000"/>
 
 <br>
 <div align="left">
